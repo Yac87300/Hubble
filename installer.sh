@@ -64,12 +64,20 @@ function stop() {
 }
 
 function clean() {
+     echo "WARN: This operation will result in data/node loss,start in 5s"
+     sleep 5
      cd /root/hubble;./hubble.sh down;rm -rf /root/hubble
 }
 
 
 function resetData() {
+     echo "WARN: This operation will result in data/node loss,start in 5s"
+     sleep 5
      cd /root/hubble; rm -rf .rock
+}
+
+function upgrade() {
+    cd /root/hubble; ./hubble.sh upgrade
 }
 
 function logs() {
@@ -138,6 +146,13 @@ stop)
 resetData)
   resetData
   ;;
+
+upgrade)
+
+  upgrade
+
+  ;;
+
 
 **)
   echo "Flag:
