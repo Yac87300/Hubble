@@ -1,1 +1,5 @@
 
+chmod +x install.sh
+
+
+./install.sh show help
